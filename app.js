@@ -13,6 +13,8 @@ app.use(express.json());
 
 let database = null;
 
+//CONECTION WITH DATBASE SQL AND NODE JS
+
 const initializeDbAndServer = async () => {
   try {
     database = await open({
@@ -36,6 +38,8 @@ initializeDbAndServer();
 const validatePassword = (password) => {
   return password.length > 4;
 };
+
+//register api 2nd one ans
 
 app.post("/register", async (request, response) => {
   const { username, name, password, gender, location } = request.body;
@@ -66,6 +70,8 @@ app.post("/register", async (request, response) => {
   }
 });
 
+// login api 3rd one ans
+
 app.post("/login", async (request, response) => {
   const { username, password } = request.body;
   const selectUserQuery = `SELECT * FROM user WHERE username = '${username}'`;
@@ -89,6 +95,8 @@ app.post("/login", async (request, response) => {
   }
 });
 
+// authentiacate middlewear function
+
 const authenticateToken = (request, response, next) => {
   let jwtToken;
   const authHeader = request.headers["authorization"];
@@ -110,7 +118,7 @@ const authenticateToken = (request, response, next) => {
     });
   }
 };
-
+//get users api 4th ans
 app.get("/users/", authenticateToken, async (request, response) => {
   const getUsersQuery = `
    SELECT

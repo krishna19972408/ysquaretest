@@ -2,9 +2,9 @@ POST http://localhost:3000/register
 Content-Type:application/json
 
 {
-    "name":"mahi",
-    "username":"mahesh12",
-    "password":"mahesh1234",
+    "name":"keshav",
+    "username":"keshav12",
+    "password":"keshav1234",
     "gender":"male",
     "location":"hyderabad"
 }
@@ -15,15 +15,12 @@ POST http://localhost:3000/login
 Content-Type: application/json 
 
 {
-    "username":"mahesh12",
-    "password":"mahesh1234"
+    "username":"keshav12",
+    "password":"keshav1234"
 }
 
-###
+### 
+
 GET http://localhost:3000/users/
 
-Authorization: 
-
-
-
-
+Authorization: bearer 
